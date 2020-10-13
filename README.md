@@ -10,8 +10,8 @@ This notebook is broken up into two sections: the first section investigates an 
 Thus, Kitsune was invented as a solution to offer online, unsupervised, low complexity processing. The details of how Kitsune and KitNET, Kitsun'e anomaly detection algorithm, can be found in [this paper](https://github.com/ymirsky/Kitsune-py/blob/master/Kitsune%20paper.pdf), but we will briefly address how the logic of it works here.
 
 ### How Kitsune Works
-<img src="https://github.com/jennettageorge/NIDS/blob/master/Kitsune_fig.png?raw=true" alt="kitsune architecture" height='270' width="600"/>
-<div align="center"><i>KitNET's Architectural Diagram <a href='https://github.com/ymirsky/Kitsune-py'>Source</a></i></div>
+<div align="center"><img src="https://github.com/jennettageorge/NIDS/blob/master/Kitsune_fig.png?raw=true" alt="kitsune architecture" height='270' width="600"/>
+<i>KitNET's Architectural Diagram <a href='https://github.com/ymirsky/Kitsune-py'>Source</a></i></div>
 
 We chose Kitsune for this project as it provides the following traits that are needed for a NIDS framework:
 
