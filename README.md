@@ -10,13 +10,14 @@ This notebook is broken up into two sections: the first section investigates an 
 Thus, Kitsune was invented as a solution to offer online, unsupervised, low complexity processing. The details of how Kitsune and KitNET, Kitsun'e anomaly detection algorithm, can be found in [this paper](https://github.com/ymirsky/Kitsune-py/blob/master/Kitsune%20paper.pdf), but we will briefly address how the logic of it works here.
 
 ### How Kitsune Works
-<img src="kitsune_fig.png" alt="drawing" height='270' width="600"/>
+<img src="https://github.com/jennettageorge/NIDS/blob/master/Kitsune_fig.png?raw=true" alt="kitsune architecture" height='270' width="600"/>
 <div align="center"><i>KitNET's Architectural Diagram <a href='https://github.com/ymirsky/Kitsune-py'>Source</a></i></div>
+
 We chose Kitsune for this project as it provides the following traits that are needed for a NIDS framework:
 
 - Highly scalable for processing full PCAP data and extracting features for an ANN
-- unsupervised approach does not require subject matter expert labeling or maintanance
-- can be offered online and operaetes on edge devices with limited compute and storage requirements
+- unsupervised approach does not require subject matter expert labeling or maintenance
+- can be offered online and operates on edge devices with limited compute and storage requirements
 
 Kitsune operates by (1) monitoring the statistical patterns of recent network traffic, and (2) detecting anomalous patterns via an ensemble of autoencoders. The ensemble of autoencoders decodes a packet then re-encodes it based on weights it learned from the training portion of the process. It then compares the difference (as an RMSE score) between the original and re-contructed packet, where the higher the RMSE score, the more likely anomalous it is.  
 
@@ -26,4 +27,3 @@ Kitsune operates by (1) monitoring the statistical patterns of recent network tr
 
 #### <i> Implimentation notes from the creator:
 <i>This python implimentation of Kitsune is is not optimal in terms of speed. To make Kitsune run as fast as described in the paper, the entire project must be cythonized, or implimented in C++.</i>.
-    
